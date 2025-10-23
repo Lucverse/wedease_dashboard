@@ -22,10 +22,18 @@ const routes: RouteItem[] = [
         alt: "RSVP Dashboard",
         className: "h-16 sm:h-20 md:h-24 lg:h-28",
         isExternal: false
+    },
+    {
+        to: "https://wow-meter.wedease.ai",
+        text: "Wow Meter",
+        image: WedeaseLogo,
+        alt: "Wow Meter",
+        className: "h-16 sm:h-20 md:h-24 lg:h-28",
+        isExternal: true
     }
 ];
 
-interface DashboardProps {}
+interface DashboardProps { }
 
 const Dashboard: React.FC<DashboardProps> = () => {
     return (
@@ -34,10 +42,10 @@ const Dashboard: React.FC<DashboardProps> = () => {
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
                     <div className="flex items-center justify-between">
                         <div className="flex items-center space-x-4">
-                            <img 
-                                src={WedeaseLogo} 
-                                alt="Wedease Logo" 
-                                className="h-8 sm:h-12 md:h-14 lg:h-16" 
+                            <img
+                                src={WedeaseLogo}
+                                alt="Wedease Logo"
+                                className="h-8 sm:h-12 md:h-14 lg:h-16"
                             />
                             <div>
                                 <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-4xl font-bold text-gray-900">
@@ -64,10 +72,10 @@ const Dashboard: React.FC<DashboardProps> = () => {
                             <div className="p-6 text-center">
                                 <div className="flex justify-center mb-4">
                                     <div className="relative">
-                                        <img 
-                                            alt={link.alt} 
-                                            src={link.image} 
-                                            className={`${link.className} transition-transform duration-200 group-hover:scale-110`} 
+                                        <img
+                                            alt={link.alt}
+                                            src={link.image}
+                                            className={`${link.className} transition-transform duration-200 group-hover:scale-110`}
                                         />
                                         <div className="absolute inset-0 bg-gradient-to-t from-red-900/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-200 rounded-lg"></div>
                                     </div>
@@ -94,8 +102,8 @@ const Dashboard: React.FC<DashboardProps> = () => {
                     ))}
 
                     {Array.from({ length: Math.max(0, 3 - routes.length) }, (_, i) => (
-                        <div 
-                            key={`placeholder-${i}`} 
+                        <div
+                            key={`placeholder-${i}`}
                             className="bg-gray-50 rounded-xl border-2 border-dashed border-gray-200 p-6 flex flex-col items-center justify-center text-center opacity-50"
                         >
                             <div className="w-16 h-16 bg-gray-200 rounded-full mb-4 flex items-center justify-center">
